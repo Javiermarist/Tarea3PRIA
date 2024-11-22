@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Ejercicio6 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // EJERCICIO B.6. Crea un objeto que se desplace en el eje Z una unidad al soltar la tecla espaciadora.
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            transform.position += new Vector3(0, 0, 1);
+        }
     }
 }

@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Ejercicio7 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // EJERCICIO B.7. Crea un cubo que se destruye al clicar en él.
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject == gameObject)
+                {
+                    Destroy(gameObject);
+                }
+            }
+        }
     }
 }

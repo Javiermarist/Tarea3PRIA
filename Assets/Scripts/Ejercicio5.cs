@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Ejercicio5 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // EJERCICIO B.5. Crea un simple controlador de personaje que desplace un cubo en los ejes X y Z al pulsar los cursores.
 
-    // Update is called once per frame
+    public float speed = 5.0f;
+
     void Update()
     {
-        
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
+
+        Vector3 movement = new Vector3(moveX, 0.0f, moveY);
+        transform.Translate(movement * speed * Time.deltaTime);
     }
 }
