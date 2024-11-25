@@ -14,9 +14,9 @@ public class Ejercicio7 : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject == gameObject)
+                if (hit.transform.gameObject == this.gameObject)
                 {
-                    Destroy(gameObject);
+                    Destroy(this.gameObject);
                 }
             }
         }
